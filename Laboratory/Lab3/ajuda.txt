@@ -1,0 +1,1 @@
+Adicionar reduced_data.txt na pasta data 

@@ -1,0 +1,95 @@
+P5: Solo se modificó el CSVReader.c
+
+./mainRecc 4 2207774
+valgrind ./mainSave
+
+1. Introducció
+Paradigma del productor-consumidor:
+funció getMoviesFrom File al fitxer CSVReader.c
+-> separar en productor i consumidor
+Dica:
+    - separar Productor i consumidors en el codi original (FET)
+    - Fica buffer al mig i crear fills
+Problema: darrera cela, consumidor ha de saber quants lineas  ha de llegir
+o pusar un 0 que identifiqui que s'ha acabat (FET)
+- Fer servir funcions Fitxa 1, per mesurar temps CPU de la funció Figura7
+
+2. Algorisme
+Productor:
+    1. lectura de de dades del fitxer - fgets()
+    2. Comprovar si la línea es un id de pelicula - lineIsMovie()
+    3. Extreu id, rating
+    4. Cada cela emmagatzema N parells [movieID, line]
+    5. Pusar al buffer quan la cella sigui omplida, en cas qui ja este buida
+Productor produeix: N parells d’elements [movieId, line]
+- Productor ho fa més rápid a nivell de CPU, fgets() + lineIsMovie
+-> productor s'adormirá
+- Consumidor tarda més, getRating()
+-> quan el consumidor agafi la cella, despertará el productor
+
+Consumidor:
+    1. Procesaran cada cella del buffer.
+    2. S'extraurá de line l'usuari i valoració, getRating()
+
+Cadascuna de les cel·les emmagatzema N parells d’elements [movieId, line]
+un parell: 1, "id, valoració"
+
+#define N 10, probar (1, 100, 1000, 10000)
+struct cell {
+    <altres coses>
+    int movieID[N];
+    char line[N][MAXCHAR];
+}
+MAXCHAR -> char line[1024]
+or
+struct cell {
+    <altres coses>, quants lineas ha d processar (int), si fa falta (bool)
+    struct parell data[N];
+}
+struct parell {
+    int movieID;
+    char line[MAXCHAR];
+}
+
+3. Implementació
+Fill principal: productor
+productor crea al buffer i pasa el punter del buffer al consumidor
+
+3.2 Com escriure al buffer:
+Fer servir punters
+productor -> cela buffer
+cela buffer -> productor
+consumidor -> cela buffer
+Obs: No cal buidar, fem overwrite
+
+$ bc
+1000*(4+1024)
+movies*(sencer+maxchar)
+/(1024*1024) Mbs
+
+Estructura del fitxer
+ID de pelicula:
+ID usuari, valoració, data
+...
+less
+/2:
+
+10, buffer només una cela
+12, buffer B celulas
+
+Fitxa 2 - Variables conidicionals
+Codi productor-consumidor -> 1 productor y 1 consumidor, buffer mida 1
+Fitxa 2/codi/mon_productor_consumidor.c
+Monitors/codi/monitor_1prod1cons.c
+
+struct FileMovies {
+    struct Movie * movies;
+    int numberOfMovies;
+};
+
+Entrega:
+time només del getMoviesFromFile
+Fitxa1, seccio 2.5, calcul_pi_fils
+clock();
+getMoviesFromFile()
+clock();

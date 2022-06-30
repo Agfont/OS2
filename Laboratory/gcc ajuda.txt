@@ -1,0 +1,5 @@
+gcc .c -o ex
+gcc fils_vector.c -o fils_v -lpthread
+
+pstree -> Arbre de processos
+

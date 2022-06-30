@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	Development	//
+AUXILIAR_NUMBER_OF_MOVIES	model/CSVReader.c	8;"	d	file:
+AUXILIAR_NUMBER_OF_RATINGS	model/CSVReader.c	9;"	d	file:
+DataItem	dataStructures/set.h	/^struct DataItem {$/;"	s
+EPSILON_COMPARISON	model/RecommendationMatrix.c	11;"	d	file:
+EXEC_MODE	mainRecc.c	/^enum EXEC_MODE {$/;"	g	file:
+FORECAST	mainRecc.c	/^    FORECAST = 3,$/;"	e	enum:EXEC_MODE	file:
+FileMovies	model/Movie.h	/^struct FileMovies {$/;"	s
+HashTableLoadedResult	model/RecommendationMatrix.h	/^struct HashTableLoadedResult {$/;"	s
+MAXIMUM_VALUE_OF_KEYS_HASH_TABLE	model/RecommendationMatrix.c	10;"	d	file:
+MAX_AUXILIAR_USERS	model/User.c	8;"	d	file:
+Movie	model/Movie.h	/^struct Movie {$/;"	s
+NUMBER_OF_MOVIES	mainRecc.c	/^    NUMBER_OF_MOVIES = 1,$/;"	e	enum:EXEC_MODE	file:
+NUMBER_OF_USERS	mainRecc.c	/^    NUMBER_OF_USERS = 2,$/;"	e	enum:EXEC_MODE	file:
+PRACTICA4_CSVREADER_H	model/CSVReader.h	2;"	d
+PRACTICA4_HASHTABLEDISKSERVICE_H	model/HashTableDiskService.h	2;"	d
+PRACTICA4_MATRIXDISKSERVICE_H	model/MatrixDiskService.h	2;"	d
+PRACTICA4_MOVIE_H	model/Movie.h	6;"	d
+PRACTICA4_RATING_H	model/Rating.h	6;"	d
+PRACTICA4_RECOMMENDATIONMATRIX_H	model/RecommendationMatrix.h	2;"	d
+PRACTICA4_SET_H	dataStructures/set.h	6;"	d
+PRACTICA4_USER_H	model/User.h	2;"	d
+PREDICT	mainRecc.c	/^    PREDICT = 4$/;"	e	enum:EXEC_MODE	file:
+Rating	model/Rating.h	/^struct Rating {$/;"	s
+RecommendationMatrix	model/RecommendationMatrix.h	/^struct RecommendationMatrix {$/;"	s
+Set	dataStructures/set.h	/^struct Set {$/;"	s
+UniqueMoviesResult	model/Movie.h	/^struct UniqueMoviesResult {$/;"	s
+UniqueUsersResult	model/User.h	/^struct UniqueUsersResult {$/;"	s
+User	model/User.h	/^struct User {$/;"	s
+__freeDataItem	dataStructures/set.c	/^void __freeDataItem(struct DataItem* dataItem) {$/;"	f
+_getAccSum	model/RecommendationMatrix.c	/^float _getAccSum(int rowUser1, int rowUser2, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+accessRecommendationMatrixValue	model/RecommendationMatrix.c	/^float accessRecommendationMatrixValue(int row, int col, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+addMovieToCurrentMovies	model/CSVReader.c	/^void addMovieToCurrentMovies(struct Movie *movies, struct Movie *movieToAdd, int indexToAdd) {$/;"	f
+addMoviesToTable	model/RecommendationMatrix.c	/^void addMoviesToTable(int numberOfMovies, struct Movie* movies) {$/;"	f
+addRatingsToMovie	model/CSVReader.c	/^void addRatingsToMovie(struct Movie *movie, struct Rating *ratingsToAdd, int numberOfRatings) {$/;"	f
+addUsersToTable	model/RecommendationMatrix.c	/^void addUsersToTable(int numberOfUsers, struct User* users) {$/;"	f
+copyRatings	model/Movie.c	/^void copyRatings(struct Movie* fromMovie, struct Movie* toMovie) {$/;"	f
+createEmptyRecommendationMatrix	model/RecommendationMatrix.c	/^struct RecommendationMatrix createEmptyRecommendationMatrix(int numberOfUsers, int numberOfMovies) {$/;"	f
+createHashMoviesAndUsers	model/RecommendationMatrix.c	/^void createHashMoviesAndUsers(int numberOfUsers, int numberOfMovies) {$/;"	f
+createSet	dataStructures/set.c	/^struct Set *createSet(int size) {$/;"	f
+customerId	model/Rating.h	/^    int customerId;$/;"	m	struct:Rating
+data	dataStructures/set.h	/^    int *data;$/;"	m	struct:DataItem
+dataItem	dataStructures/set.h	/^    struct DataItem *dataItem;$/;"	m	struct:Set	typeref:struct:Set::
+destroyHashMoviesAndUsers	model/RecommendationMatrix.c	/^void destroyHashMoviesAndUsers() {$/;"	f
+elements	dataStructures/set.h	/^    int elements;$/;"	m	struct:DataItem
+fillRecommendationMatrix	model/RecommendationMatrix.c	/^void fillRecommendationMatrix(int numberOfMovies, struct Movie* movies, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+forecastRating	model/RecommendationMatrix.c	/^float forecastRating(int colMovieToScore, int rowUser, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+freeFileMovies	model/Movie.c	/^void freeFileMovies(struct FileMovies *fileMovies) {$/;"	f
+freeMovie	model/Movie.c	/^void freeMovie(struct Movie *movie) {$/;"	f
+freeRecommendationMatrix	model/RecommendationMatrix.c	/^void freeRecommendationMatrix(struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+freeSet	dataStructures/set.c	/^void freeSet(struct Set* set) {$/;"	f
+getForecast	mainRecc.c	/^void getForecast(int userId, int movieId, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+getMovieId	model/CSVReader.c	/^int getMovieId(char *line) {$/;"	f
+getMoviesFromCSV	model/CSVReader.c	/^struct FileMovies getMoviesFromCSV(const char  *filepath) {$/;"	f
+getMoviesFromFile	model/CSVReader.c	/^struct FileMovies getMoviesFromFile(FILE* trainingData) {$/;"	f
+getNumberOfMovies	mainRecc.c	/^void getNumberOfMovies(int userId, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+getNumberOfMoviesSeenByUser	model/RecommendationMatrix.c	/^int getNumberOfMoviesSeenByUser(int rowUser, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+getNumberOfUniqueMovies	model/Movie.c	/^int getNumberOfUniqueMovies(int numberOfFiles, struct FileMovies *moviesFromFile) {$/;"	f
+getNumberOfUsers	mainRecc.c	/^void getNumberOfUsers(int movieId, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+getNumberOfUsersThatHaveSeenMovie	model/RecommendationMatrix.c	/^int getNumberOfUsersThatHaveSeenMovie(int colMovie, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+getPredict	mainRecc.c	/^void getPredict(int userId, struct RecommendationMatrix *recommendationMatrix, struct Movie* movies, int numberOfMovies)  {$/;"	f
+getRating	model/CSVReader.c	/^struct Rating getRating(char* line) {$/;"	f
+getRecommendedMovieForUser	model/RecommendationMatrix.c	/^int getRecommendedMovieForUser(int rowUser, struct RecommendationMatrix *recommendationMatrix, struct Movie* movies, int numberOfMovies) {$/;"	f
+getUniqueMovies	model/Movie.c	/^struct UniqueMoviesResult getUniqueMovies(int numberOfFiles, struct FileMovies *moviesFromFile) {$/;"	f
+getUniqueUsers	model/User.c	/^struct UniqueUsersResult getUniqueUsers(int numberOfFiles, struct FileMovies *moviesFromFile) {$/;"	f
+grid	model/RecommendationMatrix.h	/^    float *grid;$/;"	m	struct:RecommendationMatrix
+insertInSet	dataStructures/set.c	/^void insertInSet(struct Set* set, int value) {$/;"	f
+isValueInNode	dataStructures/set.c	/^int isValueInNode(struct DataItem *dataItem, int value) {$/;"	f
+isValueInSet	dataStructures/set.c	/^int isValueInSet(struct Set* set, int value) {$/;"	f
+lineIsMovie	model/CSVReader.c	/^int lineIsMovie(char *line) {$/;"	f
+loadHashTableMoviesAndUsers	model/HashTableDiskService.c	/^struct HashTableLoadedResult loadHashTableMoviesAndUsers(char *filepath) {$/;"	f
+loadMatrixFromDisk	model/MatrixDiskService.c	/^struct RecommendationMatrix loadMatrixFromDisk(char *matrixFilepath, char *metadataFilepath) {$/;"	f
+lookColForMovie	model/RecommendationMatrix.c	/^int lookColForMovie(int movieId) {$/;"	f
+lookRowForUser	model/RecommendationMatrix.c	/^int lookRowForUser(int userId) {$/;"	f
+main	mainRecc.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	mainSave.c	/^int main() {$/;"	f
+mainMultipleFiles	mainMultipleFiles.c	/^int mainMultipleFiles(int argc, char *argv[]) {$/;"	f
+movieId	model/Movie.h	/^    int movieId;$/;"	m	struct:Movie
+movieList	model/RecommendationMatrix.h	/^    struct Movie* movieList;$/;"	m	struct:HashTableLoadedResult	typeref:struct:HashTableLoadedResult::
+movies	model/Movie.h	/^    struct Movie * movies;$/;"	m	struct:FileMovies	typeref:struct:FileMovies::
+moviesList	model/Movie.h	/^    struct Movie* moviesList;$/;"	m	struct:UniqueMoviesResult	typeref:struct:UniqueMoviesResult::
+numberOfColumns	model/RecommendationMatrix.h	/^    int numberOfColumns;$/;"	m	struct:RecommendationMatrix
+numberOfMovies	model/Movie.h	/^    int numberOfMovies;$/;"	m	struct:FileMovies
+numberOfMovies	model/Movie.h	/^    int numberOfMovies;$/;"	m	struct:UniqueMoviesResult
+numberOfMovies	model/RecommendationMatrix.h	/^    int numberOfMovies;$/;"	m	struct:HashTableLoadedResult
+numberOfRatings	model/Movie.h	/^    int numberOfRatings;$/;"	m	struct:Movie
+numberOfRows	model/RecommendationMatrix.h	/^    int numberOfRows;$/;"	m	struct:RecommendationMatrix
+numberOfUsers	model/RecommendationMatrix.h	/^    int numberOfUsers;$/;"	m	struct:HashTableLoadedResult
+numberOfUsers	model/User.h	/^    int numberOfUsers;$/;"	m	struct:UniqueUsersResult
+rating	model/Rating.h	/^    int rating;$/;"	m	struct:Rating
+ratings	model/Movie.h	/^    struct Rating *ratings;$/;"	m	struct:Movie	typeref:struct:Movie::
+removeFromSet	dataStructures/set.c	/^void removeFromSet(struct Set* set, int value) {$/;"	f
+removeMoviesAndUsersFromTable	model/RecommendationMatrix.c	/^void removeMoviesAndUsersFromTable(int numberOfMovies, struct Movie* movies, int numberOfUsers, struct User* users) {$/;"	f
+saveHashTableMoviesAndUsers	model/HashTableDiskService.c	/^void saveHashTableMoviesAndUsers(char* filepath, int numberOfUsers, struct User* users, int numberOfMovies, struct Movie* movies) {$/;"	f
+saveMatrixIntoDisk	model/MatrixDiskService.c	/^void saveMatrixIntoDisk(char *matrixFilepath, char *metadataFilepath, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+setRecommendationMatrixValue	model/RecommendationMatrix.c	/^void setRecommendationMatrixValue(int row, int col, float value, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+similarityUsers	model/RecommendationMatrix.c	/^float similarityUsers(int rowUser1, int rowUser2, struct RecommendationMatrix *recommendationMatrix) {$/;"	f
+size	dataStructures/set.h	/^    int size;$/;"	m	struct:Set
+userId	model/User.h	/^    int userId;$/;"	m	struct:User
+userList	model/RecommendationMatrix.h	/^    struct User* userList;$/;"	m	struct:HashTableLoadedResult	typeref:struct:HashTableLoadedResult::
+userList	model/User.h	/^    struct User* userList;$/;"	m	struct:UniqueUsersResult	typeref:struct:UniqueUsersResult::

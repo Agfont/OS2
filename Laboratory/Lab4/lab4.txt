@@ -1,0 +1,79 @@
+P4: Solo se modificó el RecommendationMatrix.c
+
+2.
+Paralelitzar el bucle de la funció getRecommendedMovieForUser()
+asignar a cada fill un troz del conjunt de pelicules que n'hi ha
+
+currentScore podemos Paralelitzar, porque son independente entre ellas
+maxScore y recommendedMovieColumn
+
+# define M 2
+
+asignació dinamica, repartir blocs entre els fills
+variable global que controla el límit dels blocs, inicialitzar a 0
+// Secció crítica, variable compartida
+
+map-reduce.
+a) Map: els fils – els que processen les dades –
+emmagatzemen el resultat (parcial) de les dades que processen, 
+// currentScore
+
+b) Reduce: un cop els fils han acabat de processar totes les dades es recullen els resultats parcials de cada fil i es calcula el resultat final.
+// calcula quina és la pel·lícula a recomanar a l’usuari.
+
+3.1 pthread creat y join
+3.2 lock y unlock
+3.1. evitar variables globals, utilitzant el void *arg
+void *fill (void *arg)
+arguments (...) arg;
+int col_begin, col_end;
+while (!variable_global != recommendationMatrix->numberOfColumns) {
+    lock(clau)
+    // calcular col begin y col_end (4 líneas, mirar overflow de matriu)
+    // utilizar variable compartida que conté fins on s'ha executat
+    // atualitzar variable compartida
+    unlock(clau)
+    for(int j=col_begin; j < col_end; j++) {
+        // We only accept movies that has not been seen yet.
+        matrixValue = *(recommendationMatrix->grid + j + rowUser*recommendationMatrix->numberOfColumns);
+        if(fabs(matrixValue) <= EPSILON_COMPARISON) {
+            currentScore = forecastRating(j, rowUser, recommendationMatrix);
+            if(currentScore > maxScore) {
+                maxScore = currentScore;
+                recommendedMovieColumn = j;
+            }
+        }
+    }
+return
+
+getRecommendedMovieForUser
+for(int i = 0; i < M; i++) // primer un 1
+    pthread_create
+for(int i = 0; i < M; i++) // primer un 1
+    join
+for(int i = 0; i < M; i++)  // primer un 1
+    //calcular max entre els valors retornats
+----- Fitxa 1 -----
+Passar informació per void *arg
+Escalar y estructura
+
+funcioó *thr_fn(void *arg)
+return
+capturar el return del fill amb el join
+
+----- Fitxa 2 -----
+Només fa falta el 2.1
+assegurar l'exclusió mútua entre fils mitijaçant una clau
+
+----------------------
+Caso estatico: está na pila
+Obs: se estiver no filho usar dinâmico, para nao perder a direção de memória.
+struct parametres par;
+par.m = recommendationMatrix;
+par.rowUser = rowUser;
+----------------------
+Caso dinamico: malloc
+struct parametres *par;
+par = malloc(sizeof(struct parametres));
+par->m = recommendationMatrix;
+par->rowUser = rowUser;

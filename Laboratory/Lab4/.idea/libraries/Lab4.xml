@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Lab4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/practica4_char_recommendation_matrix.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Fitxa1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Fitxa2.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

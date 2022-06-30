@@ -1,0 +1,36 @@
+Lab2 - abc123abc
+gcc stack4.c -o stack4
+- direcció de retorn de la pila 
+- la pila creix en sentit decreixent en la memoria
+
+--------
+Stack4
++ de 64 bytes -> stack overflow. 
+És a dir, escriurà fora del vector podent 
+sobreescriure la direcció de retorn de la funció
+
+stack4_exploit.py
+\x41 = 65 en hexadecimal
+
+eip: és on s’emmagatzema la direcció de retorn
+ebp: extended base pointer
+
+complete_level
+
+--------
+Stack5
+ps aux | grep stack5
+cat /proc/2484/maps
+
+setarch -R /bin/bash
+execstack -s stack5
+
+Exercici
+Observar exercicio 1 
+Jugar amb adresses, modificar
+./heapone a b
+
+48 31 d2 48 bb ff 2f 62 69 6e 2f 6c 73 48 c1 eb 08 53 48 89 e7 48 31 c0 50 57 48 89 e6 b0 3b 0f 05  
+0a 2f 62 69 6e 2f 6c 73 
+0a 2f 62 69 6e 2f 70 73
+0a 68 73 2f 6e 69 62 2f
